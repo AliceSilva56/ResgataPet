@@ -17,18 +17,38 @@ export default {
                         <router-link to="/home" class="nav-link">
                         <i class="fas fa-address-book"></i> Inicio
                         </router-link>
-                    </li>
-                <li><a href="#report"><i class="fas fa-plus-circle"></i> Reportar</a></li>
+                </li>
 
-                <li><a href="#adotar"><i class="fas fa-paw"></i> Adotar</a></li>
-                
-                    <li>
-                        <router-link to="/contatos" class="nav-link">
-                        <i class="fas fa-address-book"></i> Contatos
+                <li>
+                        <router-link to="/report" class="nav-link">
+                        <i class="fas fa-address-book"></i> Reportar
                         </router-link>
-                    </li>
-                <li><a href="#doar"><i class="fas fa-heart"></i> Doar</a></li>
-                <li><a href="#login" class="login-btn"><i class="fas fa-user"></i> Entrar</a></li>
+                </li>
+
+
+                <li>
+                        <router-link to="/adotar" class="nav-link">
+                        <i class="fas fa-address-book"></i> Adotar
+                        </router-link>
+                </li>
+                
+                <li>
+                    <router-link to="/contatos" class="nav-link">
+                    <i class="fas fa-address-book"></i> Contatos
+                    </router-link>
+                </li>
+
+                <li>
+                    <router-link to="/doar" class="nav-link">
+                    <i class="fas fa-address-book"></i> Doar
+                    </router-link>
+                </li>
+                
+               <li >
+                    <router-link to="/login" class="nav-link">
+                    <i class="fas fa-address-book"></i> Entrar
+                    </router-link>
+                </li>
             </ul>
 
             <div class="mobile-menu">
@@ -40,9 +60,7 @@ export default {
 
 <style scoped>
 
-/* Variáveis de cores */
 
-/* Reset e estilos base */
 * {
     margin: 0;
     padding: 0;
