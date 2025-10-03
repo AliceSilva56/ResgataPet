@@ -1,0 +1,23 @@
+/* src/assets/theme.css */
+:root {
+  /* 🎨 Paleta de Cores */
+  --cor-primaria: #D32F2F;   /* Vermelho */
+  --cor-secundaria: #F57C00; /* Laranja */
+  --cor-branco: #FFFFFF;
+  --cor-cinza-claro: #F9F9F9;
+  --cor-cinza-medio: #616161;
+  --cor-cinza-escuro: #212121;
+  --cor-sucesso: #4CAF50;
+
+  /* 🖋️ Tipografia */
+  --fonte-principal: 'Roboto', sans-serif;
+}
+
+/* Estilos Globais */
+body {
+  font-family: var(--fonte-principal);
+  background-color: var(--cor-cinza-claro);
+  color: var(--cor-cinza-escuro);
+  margin: 0;
+  padding: 0;
+}

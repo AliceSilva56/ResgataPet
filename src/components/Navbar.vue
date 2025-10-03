@@ -1,59 +1,53 @@
-<script setup>
-// 1. Importe seus componentes SVG
-import IconHome from '../assets/icons/IconHome.vue';
-import IconReport from '../assets/icons/IconReport.vue';
-import IconAdotar from '../assets/icons/IconAdotar.vue';
-import IconContact from '../assets/icons/IconContact.vue';
-import IconDoar from '../assets/icons/IconDoar.vue';
-import IconLogin from '../assets/icons/IconUser.vue';
-
-
-const appName = 'ResgataPet'; 
-
+<script>
+export default {
+  name: 'NavBar'
+}
 </script>
 
 <template> 
+<!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
             <div class="logo">
-                <a href="#" class="logo-link">Resgata<span>Pet</span></a>
+                <a href="logo.png">Resgata<span>Pet</span></a>
             </div>
             
             <ul class="nav-links">
                 <li>
-                    <a href="#inicio" class="nav-link active">
-                        <IconHome class="nav-icon" /> Início
-                    </a>
+                        <router-link to="/home" class="nav-link">
+                        <i class="fas fa-address-book"></i> Inicio
+                        </router-link>
+                </li>
+
+                <li>
+                        <router-link to="/report" class="nav-link">
+                        <i class="fas fa-address-book"></i> Reportar
+                        </router-link>
+                </li>
+
+
+                <li>
+                        <router-link to="/adotar" class="nav-link">
+                        <i class="fas fa-address-book"></i> Adotar
+                        </router-link>
                 </li>
                 
                 <li>
-                    <a href="#report" class="nav-link">
-                        <IconReport class="nav-icon" /> Reportar
-                    </a>
+                    <router-link to="/contatos" class="nav-link">
+                    <i class="fas fa-address-book"></i> Contatos
+                    </router-link>
                 </li>
 
                 <li>
-                    <a href="#adotar" class="nav-link">
-                        <IconAdotar class="nav-icon" /> Adotar
-                    </a>
+                    <router-link to="/doar" class="nav-link">
+                    <i class="fas fa-address-book"></i> Doar
+                    </router-link>
                 </li>
                 
-                <li>
-                    <a href="#contatos" class="nav-link">
-                        <IconContact class="nav-icon" /> Contatos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#doar" class="nav-link">
-                        <IconDoar class="nav-icon" /> Doar
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#login" class="login-btn">
-                        <IconLogin class="nav-icon" /> Entrar
-                    </a>
+               <li >
+                    <router-link to="/login" class="nav-link">
+                    <i class="fas fa-address-book"></i> Entrar
+                    </router-link>
                 </li>
             </ul>
 
@@ -66,9 +60,7 @@ const appName = 'ResgataPet';
 
 <style scoped>
 
-/* Variáveis de cores */
 
-/* Reset e estilos base */
 * {
     margin: 0;
     padding: 0;
