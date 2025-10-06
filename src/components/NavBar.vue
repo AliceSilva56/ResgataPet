@@ -13,6 +13,7 @@ export default {
             </div>
             
             <ul class="nav-links">
+                
                 <li>
                         <router-link to="/home" class="nav-link">
                         <i class="fas fa-address-book"></i> Inicio
