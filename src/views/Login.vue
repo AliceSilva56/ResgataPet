@@ -51,63 +51,23 @@
 
           <p class="signup">
             Não tem conta?
-            <a href="#" @click.prevent="$emit('go-signup')">Criar conta</a>
+            <router-link to="/criarconta">Criar Agora</router-link>
           </p>
+
         </form>
       </div>
 
       <!-- Right: Ilustração (pets) -->
-      <aside class="illustration" aria-hidden="true">
-        <!-- Um SVG simples com cachorro e gato estilizados -->
-        <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet">
-          <defs>
-            <linearGradient id="furGrad" x1="0" x2="1">
-              <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
-              <stop offset="1" stop-color="#ffe9e9" stop-opacity="0.6"/>
-            </linearGradient>
-            <linearGradient id="bgSpot" x1="0" x2="1">
-              <stop offset="0" stop-color="#ffffff" stop-opacity="0.06"/>
-              <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-
-          <!-- background soft shapes -->
-          <rect x="0" y="0" width="600" height="600" fill="url(#bgSpot)"/>
-          <g transform="translate(60,60) scale(0.8)">
-            <!-- cachorro -->
-            <g transform="translate(60,150)">
-              <ellipse cx="150" cy="160" rx="120" ry="80" fill="#fff9f9" opacity="0.9"/>
-              <path d="M70 160 Q150 30 230 160 L210 190 Q150 150 90 190 Z" fill="#ffffff" stroke="#f3d6d6" stroke-width="2"/>
-              <circle cx="140" cy="100" r="50" fill="#fff" stroke="#f3b3b3" stroke-width="3"/>
-              <circle cx="126" cy="90" r="8" fill="#333"/>
-              <circle cx="154" cy="90" r="8" fill="#333"/>
-              <path d="M128 117 Q140 128 152 117" stroke="#d97a7a" stroke-width="3" fill="none" stroke-linecap="round"/>
-              <rect x="80" y="120" width="36" height="36" rx="6" fill="#f8b0b0"/>
-            </g>
-
-            <!-- gato sentado -->
-            <g transform="translate(280,120) scale(0.9)">
-              <ellipse cx="80" cy="220" rx="70" ry="45" fill="#fff9f9" />
-              <path d="M60 170 Q80 100 120 170 L110 200 Q80 160 60 200 Z" fill="#fff" stroke="#f3d6d6" stroke-width="2"/>
-              <circle cx="95" cy="130" r="36" fill="#fff"/>
-              <circle cx="88" cy="125" r="6" fill="#333"/>
-              <circle cx="102" cy="125" r="6" fill="#333"/>
-              <path d="M90 146 Q95 156 100 146" stroke="#d97a7a" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <path d="M40 200 C55 180 120 180 135 200" stroke="#f3c2c2" stroke-width="6" fill="none" opacity="0.9" stroke-linecap="round"/>
-            </g>
-
-            <!-- small heart -->
-            <g transform="translate(300,20) scale(0.8)">
-              <path d="M10 30 A20 20 0 0 1 50 30 L30 60 Z" fill="#ff6b6b" transform="rotate(-20 30 30)"/>
-            </g>
-          </g>
-        </svg>
-      </aside>
+      <div class="illustration">
+      <img src="@/assets/img/login.png" alt="Pets" />
+    </div>
     </div>
   </div>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
   name: "Login",
   emits: ["login-success", "go-signup"],
@@ -166,10 +126,11 @@ export default {
 
 <style scoped>
 
-/* Reset pequeno e tipografia */
-
-* { box-sizing: border-box; }
+* { box-sizing: border-box; 
+}
 .page-root {
+  position: fixed;   /* garante que ocupe todo o viewport */
+  inset: 0;          /* top:0; right:0; bottom:0; left:0 */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -311,6 +272,14 @@ export default {
 }
 .signup a { color: #D32F2F; text-decoration: none; font-weight: 600; }
 
+
+
+@media (max-width: 520px) {
+  .page-root { padding: 20px; }
+  .card { padding: 18px; }
+  .card-title { font-size: 18px; }
+}
+
 /* Ilustração lateral */
 .illustration {
   background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
@@ -331,9 +300,4 @@ export default {
   .card { max-width: 100%; padding: 26px; }
 }
 
-@media (max-width: 520px) {
-  .page-root { padding: 20px; }
-  .card { padding: 18px; }
-  .card-title { font-size: 18px; }
-}
 </style>

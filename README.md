@@ -1,32 +1,181 @@
-# 🚀 Portfólio Interativo
+# ResgataPet 🐾
+📌 Visão Geral
 
-Bem-vindo(a) ao meu projeto de **Portfólio Interativo**, desenvolvido com foco em design moderno, responsividade e experiência fluida de navegação.  
-O objetivo é apresentar minhas habilidades, projetos e contatos de forma clara, com uma identidade visual **dark futurista** e elementos animados.
+O ResgataPet é uma aplicação web fullstack com frontend em Vue.js e backend em Nest.js, funcionando como um feed colaborativo de relatos sobre animais perdidos, encontrados ou feridos.
+O objetivo é conectar pessoas, ONGs e resgatadores para acelerar o resgate e aumentar as chances de adoção.
 
----
+Inspiração: redes sociais (feed estilo Instagram), mas com foco em resgate animal.
 
-## ✨ Funcionalidades
+# 🎯 Objetivos do MVP
 
-- 🌌 **Tema Dark Futurista**: interface moderna, com efeitos visuais e animações suaves.
-- 📱 **Responsividade Completa**: compatível com desktop, tablet e dispositivos móveis.
-- 🔀 **Navegação SPA (Single Page Application)** usando **Vue Router**.
-- 🧩 **Componentização**: código organizado em componentes reutilizáveis (Navbar, Cards, etc).
-- 🖼️ **Assets Personalizados**: imagens otimizadas (ex: `localizacao.png`) e ícones.
-- 💬 **Formulário de Contato**: envio de mensagens com campos estilizados.
-- 🎞️ **Animações em CSS/JS**: destaque para seções com entradas suaves e efeitos interativos.
+Permitir que qualquer pessoa registre um report de forma simples e rápida.
 
----
+Exibir os relatos em um feed público.
 
-## 🛠️ Tecnologias Utilizadas
+Garantir privacidade (localização aproximada, contato opcional).
 
-- [Vue.js 3](https://vuejs.org/)  
-- [Vite](https://vitejs.dev/)  
-- [Vue Router](https://router.vuejs.org/)  
-- [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML)  
-- [CSS3 (Flexbox, Grid, animações)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)  
-- [JavaScript ES6+](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)  
+Criar uma experiência fluida e amigável (navbar + feed + botão flutuante).
 
----
+# 🖼️ Estrutura da Aplicação
+🌐 Navbar
 
-## 📂 Estrutura de Pastas
+Não fixa.
 
+Nome/logo: ResgataPet (lado esquerdo).
+
+Opções de navegação:
+
+Home (Tela Principal)
+
+Report (novo relato)
+
+Adotar
+
+Contatos
+
+Doação
+
+Login/Usuário
+
+# 📋 Feed de Reports
+
+Estilo Instagram invertido, listando os relatos mais recentes primeiro.
+
+Estrutura do card:
+
+Cabeçalho: legenda, localização aproximada, data
+
+Conteúdo: fotos do report
+
+Rodapé: botões de interação:
+
+👍 Ajudar
+
+📍 Ver no mapa
+
+🚩 Reportar falso
+
+➕ Botão Flutuante
+
+Local: canto inferior direito
+
+Estilo: circular vermelho (#D32F2F), ícone branco “+”
+
+Ação: abre formulário de novo report
+
+# 📝 Formulário de Report
+
+Campos obrigatórios e opcionais:
+
+🐾 Qual animal (obrigatório)
+
+📌 Localização (obrigatório — manual ou via GPS)
+
+🔎 Situação (perdido, ferido, encontrado, outro)
+
+✍️ Descrição (texto livre)
+
+📸 Fotos (1–5 imagens)
+
+📞 Contato (opcional: nome, telefone, e-mail)
+
+# 🎨 Identidade Visual
+Paleta de cores
+
+Primária: Vermelho #D32F2F
+
+Secundária: Laranja #F57C00
+
+Neutros: Branco #FFFFFF, Cinza claro #F9F9F9, Cinza médio #616161, Cinza escuro #212121
+
+Feedback positivo: Verde #4CAF50
+
+Estilo de UI
+
+Navbar: simples, clara, logo/nome em destaque
+
+Feed: cards brancos, sombra leve, imagens centralizadas
+
+Botão flutuante: circular vermelho, ícone branco “+”
+
+Tipografia: moderna e legível (Roboto ou similar)
+
+# ⚙️ Tecnologias
+
+Frontend: Vue.js
+
+Backend: Nest.js
+
+Banco de Dados: PostgreSQL ou MongoDB
+
+Mapas: OpenStreetMap via Leaflet.js
+
+Uploads: armazenamento local (MVP), escalável para S3 ou GCP Storage
+
+# 🚀 Próximos Passos
+
+Criar mockups do feed + formulário para validar UX
+
+Modelar o banco de dados para armazenar relatos
+
+Implementar CRUD de reports no backend
+
+Conectar Vue.js ↔ Nest.js com API REST
+
+Adicionar mapa interativo com Leaflet
+
+Testar fluxo de upload de imagens
+
+# 📑 Divisão de Responsabilidades
+Integrante	Responsabilidade:
+
+- Alice	Navbar + Telas de navegação
+- Ana Clara	Feed (cards + integração API)
+- Samuel Backend (Nest.js + Banco + Uploads)
+- Raimundo	Formulário de Report + Mapas
+
+# 🔹 Estrutura do Projeto
+frontend/
+├─ src/
+│  ├─ assets/       # Imagens e ícones
+│  ├─ components/   # Componentes reutilizáveis
+│  ├─ views/        # Telas principais (Home, Report, Adotar, Contatos, Doação, Login)
+│  ├─ router/       # Configuração Vue Router
+│  └─ main.js       # Entrada da aplicação
+
+backend/
+├─ src/
+│  ├─ modules/      # Módulos Nest.js (Reports, Users)
+│  ├─ controllers/  # Endpoints REST
+│  ├─ services/     # Lógica de negócio
+│  └─ main.ts       # Inicialização do servidor
+
+# 🏗️ Funcionalidades do Backend
+
+Endpoints REST:
+
+- POST /reports → criar relato
+
+- GET /reports → listar relatos
+
+- GET /reports/:id → detalhes do relato
+
+- PATCH /reports/:id → editar relato
+
+- DELETE /reports/:id → apagar/reportar falso
+
+- Upload de imagens local
+
+- Modelagem de dados: Report { id, animal, situação, localização, descrição, fotos, contato, data }
+
+# 📌 Testes e Entrega
+
+Criar relato (Raimundo + Samuel)
+
+Relato aparecer no feed (Ana Clara)
+
+Navegar entre telas (Alice)
+
+Revisão final de design + UX
+
+Deploy inicial: Heroku/Render (backend) + Vercel/Netlify (frontend)
