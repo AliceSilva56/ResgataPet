@@ -13,24 +13,24 @@ export default {
             </div>
             
             <ul class="nav-links">
-
+                
                 <li>
-                    <router-link to="/home" class="nav-link">
-                    <i class="fas fa-address-book"></i> Inicio
-                    </router-link>
+                        <router-link to="/home" class="nav-link">
+                        <i class="fas fa-address-book"></i> Inicio
+                        </router-link>
                 </li>
 
                 <li>
-                    <router-link to="/report" class="nav-link">
-                    <i class="fas fa-address-book"></i> Reportar
-                    </router-link>
+                        <router-link to="/report" class="nav-link">
+                        <i class="fas fa-address-book"></i> Reportar
+                        </router-link>
                 </li>
 
 
                 <li>
-                    <router-link to="/adotar" class="nav-link">
-                    <i class="fas fa-address-book"></i> Adotar
-                    </router-link>
+                        <router-link to="/adotar" class="nav-link">
+                        <i class="fas fa-address-book"></i> Adotar
+                        </router-link>
                 </li>
                 
                 <li>
