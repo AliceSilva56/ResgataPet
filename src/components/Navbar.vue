@@ -1,6 +1,19 @@
 <script>
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+  data() {
+    return {
+      mobileOpen: false
+    };
+  },
+  methods: {
+    toggleMobile() {
+      this.mobileOpen = !this.mobileOpen;
+    },
+    closeMobile() {
+      this.mobileOpen = false;
+    }
+  }
 }
 </script>
 
@@ -12,7 +25,7 @@ export default {
                 <a href="logo.png">Resgata<span>Pet</span></a>
             </div>
             
-            <ul class="nav-links">
+            <ul class="nav-links" :class="{ open: mobileOpen }" @click="closeMobile">
                 
                 <li>
                         <router-link to="/home" class="nav-link">
@@ -52,7 +65,7 @@ export default {
                 </li>
             </ul>
 
-            <div class="mobile-menu">
+            <div class="mobile-menu" @click="toggleMobile" aria-label="Abrir menu">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -152,6 +165,23 @@ export default {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .mobile-menu { display: block; }
 }
 
 </style>
