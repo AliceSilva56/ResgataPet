@@ -1,9 +1,9 @@
 <template>
   <div class="signup-container">
-    <!-- Card de criação de conta -->
+    <!-- Card de criaรงรฃo de conta -->
     <div class="signup-card">
-      <h1 class="logo">🐾 ResgataPet</h1>
-      <p class="subtitle">Crie sua conta e ajude animais a encontrarem um lar 🐶🐱</p>
+      <h1 class="logo">๐พ ResgataPet</h1>
+      <p class="subtitle">Crie sua conta e ajude animais a encontrarem um lar ๐ถ๐ฑ</p>
 
       <form @submit.prevent="register">
         <input type="text" v-model="name" placeholder="Nome completo" required />
@@ -15,16 +15,16 @@
       </form>
 
       <p class="alt-option">
-        Já tem uma conta?
+        Jรก tem uma conta?
         <a href="/login">Entrar</a>
       </p>
 
       <p class="alt-option">
-        Ou <a href="/home">navegar como anônimo</a>
+        Ou <a href="/home">navegar como anรดnimo</a>
       </p>
     </div>
 
-    <!-- Ilustração lateral -->
+    <!-- Ilustraรงรฃo lateral -->
     <div class="illustration">
       <img src="@/assets/img/CriarConta.png" alt="Pets" />
     </div>
@@ -45,12 +45,12 @@ export default {
   methods: {
     register() {
       if (this.password !== this.confirmPassword) {
-        alert("As senhas não coincidem!");
+        alert("As senhas nรฃo coincidem!");
         return;
       }
       console.log("Nova conta:", this.name, this.email);
       alert("Conta criada com sucesso!");
-      // Aqui você faria a chamada para o backend (API Nest.js)
+      // Aqui vocรช faria a chamada para o backend (API Nest.js)
     }
   }
 };
@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 .signup-container {
-  position: fixed;  /* 🔥 ocupa todo o viewport */
+  position: fixed;  /* ๐ฅ ocupa todo o viewport */
   inset: 0;         /* top:0; right:0; bottom:0; left:0 */
   display: flex;
   align-items: center;
@@ -136,7 +136,7 @@ export default {
   animation: float 3s ease-in-out infinite;
 }
 
-/* 🔄 Responsividade */
+/* ๐ Responsividade */
 @media (max-width: 900px) {
   .signup-container {
     flex-direction: column;
@@ -148,7 +148,7 @@ export default {
   }
 }
 
-/* ✨ Animações suaves */
+/* โจ Animaรงรตes suaves */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
