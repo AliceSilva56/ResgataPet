@@ -16,5 +16,6 @@ export default {
 <style scoped>
 .home-view {
   padding-top: 80px; /* dá um espaço se a Navbar for fixa */
+  min-height: 100vh; /* garante que a view ocupe a altura total da tela */
 }
 </style>

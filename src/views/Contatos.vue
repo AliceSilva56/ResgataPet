@@ -30,7 +30,6 @@
       <div v-if="expandedCard" class="card-expandido">
         <button class="fechar" @click="expandedCard = null">X</button>
 
-        <!-- Área dividida imagem + conteúdo -->
         <div class="card-conteudo">
           <!-- Lado Esquerdo (Imagem) -->
           <div class="card-img">
@@ -41,7 +40,6 @@
 
           <!-- Lado Direito (Form/Conteúdo) -->
           <div class="card-info">
-            <!-- Form de Email -->
             <div v-if="expandedCard === 'email'">
               <h2>Entre em contato por E-mail</h2>
               <p>Nosso e-mail: <b>resgatapet@gmail.com</b></p>
@@ -56,7 +54,6 @@
               </form>
             </div>
 
-            <!-- Form de Telefone -->
             <div v-if="expandedCard === 'telefone'">
               <h2>Contato por Telefone</h2>
               <p>Número: <b>(11) 1234-5678</b></p>
@@ -72,7 +69,6 @@
               </form>
             </div>
 
-            <!-- Endereço -->
             <div v-if="expandedCard === 'endereco'">
               <h2>Venha nos visitar 🐾</h2>
               <p><b>Rua dos Animais, 123 - São Paulo, SP</b></p>
@@ -110,11 +106,12 @@ export default {
 </script>
 
 <style scoped>
+/* Inputs e textarea */
 textarea, input[type="email"], input[type="text"], input[type="tel"] {
-  width: 80%;        /* ocupa toda a largura disponível do form */
-  max-width: 500px;   /* limite fixo se quiser não passar disso */
-  height: 50px;      /* altura fixa */
-  resize: none;       /* desativa redimensionamento manual */
+  width: 80%;
+  max-width: 500px;
+  height: 50px;
+  resize: none;
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -130,20 +127,12 @@ textarea, input[type="email"], input[type="text"], input[type="tel"] {
   padding: 2rem;
 }
 
-/* Ajuste tamanho das imagens dentro dos cards */
-.cards img {
-  width: 180px;  
-  height: 180px;
-  object-fit: contain;
-  margin-bottom: 50px;
-}
-
 /* Cards */
 .cards {
+  margin-top: 100px;
   display: flex;
   gap: 2rem;
 }
-
 .card {
   background: var(--cor-branco);
   color: var(--cor-cinza-escuro);
@@ -156,12 +145,17 @@ textarea, input[type="email"], input[type="text"], input[type="tel"] {
   height: 400px;
   transition: transform 0.3s ease;
 }
-
 .card:hover {
   transform: scale(1.05);
 }
+.cards img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 50px;
+}
 
-/* Card expandido em colunas */
+/* Card expandido */
 .card-expandido {
   position: relative;
   background: var(--cor-branco);
@@ -171,27 +165,22 @@ textarea, input[type="email"], input[type="text"], input[type="tel"] {
   max-width: 800px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
-
 .card-conteudo {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
 }
-
 .card-img img {
   width: 200px;
   height: auto;
   object-fit: contain;
 }
-
 .card-info {
   flex: 1;
 }
-
 .card-expandido h2 {
   color: var(--cor-primaria);
 }
-
 .card-expandido .btn {
   background: var(--cor-primaria);
   color: var(--cor-branco);
@@ -202,11 +191,9 @@ textarea, input[type="email"], input[type="text"], input[type="tel"] {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 .card-expandido .btn:hover {
   background: var(--cor-secundaria);
 }
-
 .fechar {
   position: absolute;
   top: 10px;
@@ -228,7 +215,6 @@ textarea, input[type="email"], input[type="text"], input[type="tel"] {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
-
 .slide-enter-active, .slide-leave-active {
   transition: all 0.4s ease;
 }
@@ -237,5 +223,37 @@ textarea, input[type="email"], input[type="text"], input[type="tel"] {
 }
 .slide-leave-to {
   transform: translateX(-100%);
+}
+
+/* RESPONSIVO - Empilha cards e card expandido */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .cards img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+  }
+
+  .card-conteudo {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card-img img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
 }
 </style>
