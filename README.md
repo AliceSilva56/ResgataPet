@@ -14,10 +14,10 @@ Exibir os relatos em um feed público.
 
 Garantir privacidade (localização aproximada, contato opcional).
 
-Criar uma experiência fluida e amigável (navbar + feed + botão flutuante).
+Criar uma experiência fluida e amigável (NavBar + feed + botão flutuante).
 
 # 🖼️ Estrutura da Aplicação
-🌐 Navbar
+🌐 NavBar
 
 Não fixa.
 
@@ -92,7 +92,7 @@ Feedback positivo: Verde #4CAF50
 
 Estilo de UI
 
-Navbar: simples, clara, logo/nome em destaque
+NavBar: simples, clara, logo/nome em destaque
 
 Feed: cards brancos, sombra leve, imagens centralizadas
 
@@ -129,7 +129,7 @@ Testar fluxo de upload de imagens
 # 📑 Divisão de Responsabilidades
 Integrante	Responsabilidade:
 
-- Alice	Navbar + Telas de navegação
+- Alice	NavBar + Telas de navegação
 - Ana Clara	Feed (cards + integração API)
 - Samuel Backend (Nest.js + Banco + Uploads)
 - Raimundo	Formulário de Report + Mapas
